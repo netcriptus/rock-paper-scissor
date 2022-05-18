@@ -86,6 +86,8 @@ There's no explicit command to save a game, but the whole history of matches bet
 
 Not all corner cases were taken care off. This code would never be approved by QA. For example, the uniqueness of a player name is only properly validated when it's created in different requests. Sending a list with two or more repeated names will crash the server. Only basic input validation was taken care of.
 
+The configuration of the project is not production-ready. The debug options are still active and the server secret is hardcoded, as well as the database credentials.
+
 
 **Future development**
 
@@ -93,3 +95,4 @@ If given more time, the next steps would be, in no particular order:
 - Create a front end interface (possibly with Jinja2)
 - Create more input validators
 - Consolidate scores in the database
+- Get configuration options from environment to allow for deploy in different places; remove hardcoded secrets/credentials.
