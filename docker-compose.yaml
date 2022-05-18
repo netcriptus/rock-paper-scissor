@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  app:
+    build: .
+    volumes:
+     - .:/rock_paper_scissors
+    environment:
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "5000:5000"
+    command: ./entrypoint.sh
+
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_USER=rock_paper_scissors
+      - POSTGRES_PASSWORD=rock_paper_scissors
+      - POSTGRES_DB=rock_paper_scissors
