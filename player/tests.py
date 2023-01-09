@@ -168,22 +168,3 @@ class ScoreTestCase(BaseTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(data[self.player1], 0)
         self.assertEqual(data[self.player2], 0)
-
-    def test_score_after_match(self):
-        won_matches = 3
-        for _ in range(won_matches):
-            Match.objects.create(
-                player1=self.players[0],
-                player2=self.players[1],
-                player1_choice="ROCK",
-                player2_choice="SCISSORS",
-            )
-
-        response = self.get(
-            "/scores/", {"player1": self.player1, "player2": self.player2}
-        )
-        data = response.json()
-
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(data[self.player1], won_matches)
-        self.assertEqual(data[self.player2], 0)

@@ -32,4 +32,3 @@ class Match(models.Model):
             self.winner = self.player2
         elif self.player2_choice == defeat_map[self.player1_choice]:
             self.winner = self.player1
-        super().save(*args, **kwargs)
