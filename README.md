@@ -13,7 +13,7 @@ Alternatively, it's also possible to run it locally, by having a python environm
 With docker:
 
 ```
-docker-compose up --build
+make up
 ```
 
 With a local installation:
@@ -27,10 +27,8 @@ Both methods will run the API at `http://0.0.0.0:5000`
 ### Running the tests
 
 ```
-./manage.py test
+make test
 ```
-
-This command can be executed either locally or inside the docker container.
 
 
 ### API

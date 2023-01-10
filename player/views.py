@@ -1,7 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from rest_framework import permissions, viewsets
-from xxlimited import new
 
 from player.models import Match, Player, defeat_map
 from player.serializers import MatchSerializer, PlayerSerializer
